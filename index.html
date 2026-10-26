@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D2 Survivors — Gold Editor</title>
+<meta name="description" content="Community-made D2 Survivors Gold Editor. For testing and fun only.">
+<style>
+:root{color-scheme:dark;--bg:#100e16;--panel:#201c2d;--panel2:#171522;--gold:#e0bd69;--text:#eee8fa;--muted:#aaa2bb;--red:#ff3945;--border:#463854}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#30223d 0,#100e16 60%);color:var(--text);font:16px/1.5 "Segoe UI",Arial,sans-serif;min-height:100vh}
+main{max-width:980px;margin:auto;padding:28px 18px 36px}.brand{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:900;letter-spacing:.08em;color:var(--gold);margin:0}.subtitle{font-weight:800;color:var(--gold);font-size:1.25rem;margin:.1rem 0 .4rem}.warning{color:#ff5963;font-weight:900;font-size:.88rem;letter-spacing:.025em;margin:0 0 22px}
+.notice{border:1px solid #8f2630;background:#310f19;border-radius:10px;padding:14px 16px;margin-bottom:18px}.notice strong{color:#ff6670;display:block;margin-bottom:4px}
+.panel{background:linear-gradient(145deg,#211d30,#191622);border:1px solid var(--border);border-radius:12px;padding:18px;margin:14px 0;box-shadow:0 12px 30px #0003}.panel h2{font-size:1rem;color:var(--gold);margin:0 0 12px}.help{color:var(--muted);font-size:.92rem;margin:0 0 10px}
+textarea,input{width:100%;background:#100e16;color:var(--text);border:1px solid #514364;border-radius:7px;padding:11px;font:14px/1.45 Consolas,monospace;outline:none}textarea:focus,input:focus{border-color:var(--gold);box-shadow:0 0 0 2px #e0bd6925}textarea{resize:vertical;min-height:112px}input{max-width:300px;font-size:1.05rem}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button,.social{background:#342a46;color:#f7f1ff;border:1px solid #59466f;border-radius:7px;padding:10px 14px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}button:hover,.social:hover{background:#4a3862}button.primary{background:#8b6b2f;border-color:#b08a43;color:#fff8e6}button.primary:hover{background:#a5823d}button.danger{background:#371922;border-color:#78313b}
+.status{color:var(--muted);min-height:1.5em;font-size:.92rem;margin-top:10px}.gold-status{color:var(--gold);font-weight:700;margin-top:8px}.footer{border-top:1px solid var(--border);padding-top:14px;margin-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.footer b{color:var(--gold)}.socials{display:flex;gap:8px;flex-wrap:wrap}
+@media(min-width:760px){.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.two-col .panel{margin:0}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="brand">D2 SURVIVORS</h1>
+    <p class="subtitle">GOLD EDITOR <span aria-hidden="true">•</span></p>
+    <p class="warning">GAME WILL FLAG YOUR SAVE AS EDITED — RUNS DO NOT COUNT TOWARD THE LEADERBOARD</p>
+  </header>
+
+  <div class="notice"><strong>⚠ FLAGGED ACCOUNT / LEADERBOARD WARNING</strong>
+    This tool is for testing and fun only. Editing a save flags it as modified, and runs using the edited save do not count toward the leaderboard. Back up your original save before making changes.
+  </div>
+
+  <section class="panel">
+    <h2>1. SAVE SOURCE</h2>
+    <p class="help">Paste a D2S1 save code below. You can also load a text file. Processing happens in your browser; the save code is not uploaded by this page.</p>
+    <textarea id="source" spellcheck="false" placeholder="Paste D2S1: save code here…"></textarea>
+    <div class="actions">
+      <button class="primary" id="load">Load Code</button>
+      <button id="paste">Paste from Clipboard</button>
+      <label class="social" for="file">Load File…</label><input id="file" type="file" accept=".txt,.d2s,.save,text/plain" hidden>
+      <button class="danger" id="clear">Clear</button>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section class="panel">
+      <h2>2. GOLD — THE ONLY EDITABLE VALUE</h2>
+      <p class="help">Load a save first. Only the <code>gold</code> field is changed.</p>
+      <div class="row"><label for="gold">Current / New Gold:</label><input id="gold" type="number" min="0" step="1" placeholder="e.g. 999999"></div>
+      <div class="actions"><button class="primary" id="apply">Apply Gold</button></div>
+      <div class="gold-status" id="goldStatus">Load a save first.</div>
+    </section>
+    <section class="panel">
+      <h2>3. OUTPUT</h2>
+      <p class="help">Generate the modified save code, then copy it or save it as a text file.</p>
+      <div class="actions">
+        <button class="primary" id="generate">Generate Save Code</button>
+        <button id="copy">Copy Output</button>
+        <button id="download">Save Output to File</button>
+      </div>
+      <div class="status" id="outputStatus">No output generated yet.</div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>GENERATED SAVE CODE</h2>
+    <textarea id="output" spellcheck="false" readonly placeholder="Your generated D2S1 code will appear here…"></textarea>
+  </section>
+  <div class="status" id="status" role="status" aria-live="polite">Ready. Load a save to begin.</div>
+
+  <footer class="footer">
+    <b>CREATED BY JUST A POLISH GUY</b>
+    <div class="socials">
+      <a class="social" href="https://www.youtube.com/@justPLguy" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+      <a class="social" href="https://github.com/justPLguy" target="_blank" rel="noopener noreferrer">⌂ GitHub (Full Save Editor)</a>
+      <a class="social" href="https://www.facebook.com/justPLguy/" target="_blank" rel="noopener noreferrer">f Facebook</a>
+    </div>
+  </footer>
+</main>
+<script>
+(() => {
+  "use strict";
+  const PREFIX = "D2S1:";
+  const $ = id => document.getElementById(id);
+  let data = null, outputCode = null, loadedFileName = "";
+
+  // D2S1 format parity with the Python editor:
+  // URL-safe Base64 of zlib-compressed UTF-8 JSON, without trailing "=" padding.
+  function decodeSave(code) {
+    code = code.trim();
+    if (!code.startsWith(PREFIX)) throw new Error("The save code must start with D2S1:");
+    let encoded = code.slice(PREFIX.length).replace(/-/g, "+").replace(/_/g, "/");
+    encoded += "=".repeat((4 - encoded.length % 4) % 4);
+    const binary = atob(encoded);
+    const bytes = Uint8Array.from(binary, ch => ch.charCodeAt(0));
+    if (typeof DecompressionStream === "undefined") {
+      throw new Error("This browser does not support zlib decompression needed by D2S1. Please use a recent version of Chrome, Edge, or Firefox.");
+    }
+    // Python zlib.compress creates a zlib-wrapped DEFLATE stream.
+    return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate")))
+      .arrayBuffer().then(buf => {
+        const text = new TextDecoder("utf-8", {fatal:true}).decode(buf);
+        const parsed = JSON.parse(text);
+        if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error("The decoded save is not a JSON object.");
+        return parsed;
+      });
+  }
+  async function encodeSave(obj) {
+    if (typeof CompressionStream === "undefined") {
+      throw new Error("This browser does not support zlib compression needed by D2S1. Please use a recent version of Chrome, Edge, or Firefox.");
+    }
+    const raw = new TextEncoder().encode(JSON.stringify(obj));
+    const stream = new Blob([raw]).stream().pipeThrough(new CompressionStream("deflate"));
+    const bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+    let binary = "";
+    // Chunk conversion avoids argument limits on larger saves.
+    const chunk = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunk) {
+      binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+    }
+    const b64 = btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+    return PREFIX + b64;
+  }
+  function setStatus(message) { $("status").textContent = message; }
+  function showOutput(value) { $("output").value = value || ""; }
+  async function loadCode() {
+    const code = $("source").value.trim();
+    if (!code) { setStatus("Paste a save code or load it from a file."); return; }
+    try {
+      const parsed = await decodeSave(code);
+      if (!Object.prototype.hasOwnProperty.call(parsed, "gold")) throw new Error("The save does not contain a 'gold' field.");
+      data = parsed; outputCode = null;
+      $("gold").value = String(parsed.gold ?? 0);
+      $("goldStatus").textContent = "Current gold: " + Number(parsed.gold ?? 0).toLocaleString("en-US");
+      showOutput(""); $("outputStatus").textContent = "No output generated yet.";
+      setStatus("Save loaded successfully. You can change gold only.");
+    } catch (e) { data = null; setStatus("Unable to load save: " + e.message); }
+  }
+  $("load").addEventListener("click", loadCode);
+  $("paste").addEventListener("click", async () => {
+    try { $("source").value = await navigator.clipboard.readText(); setStatus("Clipboard pasted. Click Load Code to read the save."); }
+    catch (_) { setStatus("Clipboard access was blocked by the browser. Paste into the field manually with Ctrl+V."); }
+  });
+  $("file").addEventListener("change", async e => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    try { $("source").value = (await file.text()).trim(); loadedFileName = file.name; await loadCode(); }
+    catch (err) { setStatus("Unable to read file: " + err.message); }
+  });
+  $("apply").addEventListener("click", () => {
+    if (!data) { setStatus("Load a save first."); return; }
+    const raw = $("gold").value.trim();
+    if (!/^\d+$/.test(raw)) { setStatus("Enter a whole number of 0 or greater."); return; }
+    const value = Number(raw);
+    if (!Number.isSafeInteger(value) || value < 0) { setStatus("Enter a valid non-negative whole number."); return; }
+    const previous = data.gold ?? 0;
+    data.gold = value; outputCode = null; showOutput("");
+    $("outputStatus").textContent = "No output generated yet.";
+    $("goldStatus").textContent = `Changed: ${Number(previous).toLocaleString("en-US")} → ${value.toLocaleString("en-US")}`;
+    setStatus("Gold changed in memory. Generate the save code to export it.");
+  });
+  $("generate").addEventListener("click", async () => {
+    if (!data) { setStatus("Load a save first."); return; }
+    try {
+      outputCode = await encodeSave(data);
+      showOutput(outputCode);
+      $("outputStatus").textContent = "Save code generated. The original save has not been overwritten.";
+      setStatus("Save code generated successfully.");
+    } catch (e) { setStatus("Encoding error: " + e.message); }
+  });
+  $("copy").addEventListener("click", async () => {
+    if (!outputCode) { setStatus("Generate the save code first."); return; }
+    try {
+      await navigator.clipboard.writeText(outputCode);
+      setStatus("Output copied to clipboard.");
+    } catch (_) {
+      $("output").focus(); $("output").select();
+      setStatus("Automatic clipboard access was blocked. The output is selected; press Ctrl+C to copy.");
+    }
+  });
+  $("download").addEventListener("click", () => {
+    if (!outputCode) { setStatus("Generate the save code first."); return; }
+    const base = loadedFileName ? loadedFileName.replace(/\.[^.]+$/, "") : "D2S1";
+    const blob = new Blob([outputCode + "\n"], {type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href = url; a.download = base + "-gold-edited.txt";
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    setStatus("Modified save code downloaded as a text file.");
+  });
+  $("clear").addEventListener("click", () => {
+    data = null; outputCode = null; loadedFileName = "";
+    $("source").value = ""; $("gold").value = ""; showOutput("");
+    $("goldStatus").textContent = "Load a save first.";
+    $("outputStatus").textContent = "No output generated yet.";
+    $("file").value = ""; setStatus("Cleared. Load a save to begin.");
+  });
+})();
+</script>
+</body>
+</html>
