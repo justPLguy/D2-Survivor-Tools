@@ -8,6 +8,28 @@ This repository serves as the central hub for the project, providing an overview
 
 ---
 
+<p align="center">
+  <a href="https://discord.gg/nENzQxTh4">
+    <img src="https://img.shields.io/badge/JOIN_THE_D2_SURVIVORS_COMMUNITY-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2 Survivors Tools Discord Community">
+  </a>
+</p>
+
+<h2 align="center">💜 Bug Reports, Feedback & Community</h2>
+
+<p align="center">
+  Found a bug, have a suggestion, or need help with one of the tools?
+  <br>
+  Join our Discord server to report issues, share feedback, and follow project updates.
+  <br><br>
+  <a href="https://discord.gg/nENzQxTh4">
+    <img src="https://img.shields.io/badge/💬_REPORT_A_BUG_OR_GET_HELP-Join_Our_Discord-5865F2?style=for-the-badge" alt="Report a bug or get help on Discord">
+  </a>
+</p>
+
+When reporting an issue, include the tool name, tool version, game version, and steps to reproduce the problem.
+
+---
+
 ## 🚨 IMPORTANT — LEADERBOARD WARNING
 
 **USE THESE TOOLS FOR FUN AND PERSONAL EXPERIMENTATION ONLY.**
@@ -38,6 +60,7 @@ A lightweight, standalone utility for modifying the gold value in a *D2 Survivor
 **Current release:** `v1.0.0` — Initial Release
 
 **Features:**
+
 - Load a D2S1 save code by pasting it into the application.
 - Load a save code from a text file.
 - Change the gold value.
@@ -115,6 +138,8 @@ Each tool has its own release history. Always read the relevant release notes be
 
 Suggestions, bug reports, and technical contributions are welcome.
 
+**Join the Discord:** https://discord.gg/nENzQxTh4
+
 When reporting an issue, include the tool name, tool version, game version, and steps to reproduce the problem.
 
 **Never upload personal information or an unredacted save file unless you understand what it contains and intend to share it publicly.**
@@ -125,6 +150,7 @@ When reporting an issue, include the tool name, tool version, game version, and 
 
 Follow the project and find more content:
 
+- 💜 [Discord — Bug reports, support & community](https://discord.gg/nENzQxTh4)
 - ▶️ [YouTube — Just a Polish Guy](https://www.youtube.com/@justPLguy)
 - 💻 [GitHub — JustPLguy](https://github.com/justPLguy)
 - 📘 [Facebook — Just a Polish Guy](https://www.facebook.com/justPLguy/)
