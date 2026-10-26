@@ -5,6 +5,8 @@ A lightweight, standalone tool for modifying the gold value in D2 Survivors save
 Choose the version that suits you: **Python source (`.py`) or standalone Windows executable (`.exe`)**. Both versions are intended to provide the same gold-editing functionality.
 
 ---
+Youtube video - https://www.youtube.com/watch?v=xWD_akBZJzw
+---
 
 # 🔴 CRITICAL WARNING — LEADERBOARD
 
