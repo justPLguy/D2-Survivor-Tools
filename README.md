@@ -4,8 +4,26 @@ A lightweight, standalone tool for modifying the gold value in D2 Survivors save
 
 Choose the version that suits you: **Python source (`.py`) or standalone Windows executable (`.exe`)**. Both versions are intended to provide the same gold-editing functionality.
 
+<p align="center">
+  <a href="https://discord.gg/nENzQxTh4">
+    <img src="https://img.shields.io/badge/REPORT_A_BUG_ON_DISCORD-Join_Our_Server-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Report a bug on Discord">
+  </a>
+</p>
+
+<h2 align="center">🐛 Found a bug or something not working?</h2>
+
+<p align="center">
+  Help improve the Gold Editor by reporting issues, sharing feedback, or asking for support on our Discord server.
+  <br><br>
+  <a href="https://discord.gg/nENzQxTh4">
+    <img src="https://img.shields.io/badge/💬_REPORT_A_BUG_ON_DISCORD-You're_Invited!-5865F2?style=for-the-badge" alt="Report a bug on Discord">
+  </a>
+</p>
+
 ---
-Youtube video - https://www.youtube.com/watch?v=xWD_akBZJzw
+
+**YouTube video:** https://www.youtube.com/watch?v=xWD_akBZJzw
+
 ---
 
 # 🔴 CRITICAL WARNING — LEADERBOARD
@@ -129,8 +147,9 @@ The software is provided **AS IS**, without warranties. Always use backups and u
 
 ---
 
-**Created by Just a Polish Guy**
+## 👨‍💻 Created by Just a Polish Guy
 
-- [YouTube](https://www.youtube.com/@justPLguy)
-- [GitHub](https://github.com/justPLguy)
-- [Facebook](https://www.facebook.com/justPLguy/)
+- 💜 **Discord — Report a bug / get support:** https://discord.gg/nENzQxTh4
+- ▶️ [YouTube](https://www.youtube.com/@justPLguy)
+- 🧑‍💻 [GitHub](https://github.com/justPLguy)
+- 📘 [Facebook](https://www.facebook.com/justPLguy/)
