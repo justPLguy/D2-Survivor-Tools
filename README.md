@@ -10,7 +10,7 @@ This repository serves as the central hub for the project, providing an overview
 
 <p align="center">
   <a href="https://discord.gg/nENzQxTh4">
-    <img src="https://img.shields.io/badge/JOIN_THE_D2_SURVIVORS_COMMUNITY-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join the D2 Survivors Tools Discord Community">
+    <img src="https://img.shields.io/badge/JOIN_JUST_A_POLISH_GUY-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join Just a Polish Guy on Discord">
   </a>
 </p>
 
@@ -19,10 +19,10 @@ This repository serves as the central hub for the project, providing an overview
 <p align="center">
   Found a bug, have a suggestion, or need help with one of the tools?
   <br>
-  Join our Discord server to report issues, share feedback, and follow project updates.
+  Join my Discord server to report issues, share feedback, get support, and talk about games and projects.
   <br><br>
   <a href="https://discord.gg/nENzQxTh4">
-    <img src="https://img.shields.io/badge/💬_REPORT_A_BUG_OR_GET_HELP-Join_Our_Discord-5865F2?style=for-the-badge" alt="Report a bug or get help on Discord">
+    <img src="https://img.shields.io/badge/💬_JOIN_MY_DISCORD_SERVER-Just_a_Polish_Guy-5865F2?style=for-the-badge" alt="Report a bug or get help on Discord">
   </a>
 </p>
 
@@ -138,7 +138,7 @@ Each tool has its own release history. Always read the relevant release notes be
 
 Suggestions, bug reports, and technical contributions are welcome.
 
-**Join the Discord:** https://discord.gg/nENzQxTh4
+**Join my Discord server:** https://discord.gg/nENzQxTh4
 
 When reporting an issue, include the tool name, tool version, game version, and steps to reproduce the problem.
 
