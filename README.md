@@ -1,88 +1,134 @@
-# ⚔️ D2 Survivor Tools
+# 🪙 D2 Survivors — Gold Editor
 
-**Community-made tools for experimentation, save editing, and fun.**
+A lightweight, standalone tool for modifying the gold value in D2 Survivors save files.
 
-A collection of independent tools created for *D2 Survivors*. Each tool is maintained separately and may have its own features, limitations, and release history.
-
----
-
-## 🚨 IMPORTANT — LEADERBOARD WARNING
-
-**USE THESE TOOLS FOR FUN AND EXPERIMENTATION ONLY.**
-
-**MODIFYING YOUR SAVE MAY AFFECT YOUR CHARACTER'S ELIGIBILITY FOR LEADERBOARDS.**
-
-Using these tools may result in:
-
-- Your modified save being rejected by the game or leaderboard.
-- Your character no longer appearing in leaderboard rankings.
-- Loss of leaderboard progress or other unexpected consequences.
-- Save corruption or loss of data if a modified save is invalid.
-
-**There is NO guarantee that a modified save will remain eligible for leaderboard participation.**
-
-The exact consequences depend on the game and its validation systems. These tools are not intended to provide leaderboard-safe modifications.
-
-**Back up your original save before using any tool. You are responsible for any changes made to your saves.**
+Choose the version that suits you: **Python source (`.py`) or standalone Windows executable (`.exe`)**. Both versions are intended to provide the same gold-editing functionality.
 
 ---
 
-## 🧰 Project Structure
+# 🔴 CRITICAL WARNING — LEADERBOARD
 
-This repository acts as the central hub for the D2 Survivor Tools collection.
+**USING THIS GOLD EDITOR WILL FLAG YOUR SAVE AS EDITED. RUNS WILL NOT COUNT TOWARD THE LEADERBOARD.**
 
-- **`main`** — Project overview, documentation, warnings, and links to individual tools.
-- **Tool branches** — Each tool has its own dedicated development branch, keeping its code and changes separate from the rest of the project.
-- **Releases** — Versioned downloads published independently for each tool.
+This tool is intended for **FUN AND PERSONAL EXPERIMENTATION ONLY**.
 
-Each tool can evolve on its own without requiring every other tool to be updated.
+- Modified saves are not intended for leaderboard runs.
+- Do not use this tool if you want your runs to count toward leaderboard rankings.
+- Always keep a backup of your original save.
+- You are responsible for any consequences of modifying your save.
 
-Check the relevant tool branch and its Releases section for source code, downloads, version information, and tool-specific instructions.
+**If leaderboard participation matters to you, DO NOT USE THIS TOOL on the save you use for ranked runs.**
 
 ---
 
-## 🎮 Purpose
+## ✨ Features
 
-These tools are built for:
+- Modify the gold value in a D2S1 save.
+- Load a save code by pasting it into the application or loading it from a file.
+- Generate the modified save code.
+- Copy the output or save it to a separate text file.
+- Simple interface with no item, charm, or equipment editing features.
+- No SQLite database required.
 
-- Personal experimentation.
-- Learning how save files work.
-- Testing game data and save structures.
-- Exploring game mechanics.
-- Fun and personal use.
+## 📦 Available Versions
 
-They are community-made utilities, not official game tools.
+### Option 1 — Python Source (`GoldEditor.py`)
+
+Use this version if you have Python installed or want to inspect the source code.
+
+**Requirements**
+- Windows
+- Python 3.10 or newer
+- Tkinter support
+
+**How to run**
+1. Download `GoldEditor.py`.
+2. Make sure Python is installed.
+3. Double-click the file if `.py` files are associated with Python, or open a terminal in the download folder.
+4. Run:
+
+   ```bash
+   python GoldEditor.py
+   ```
+
+5. The Gold Editor window will open.
+
+If the `python` command is unavailable, try:
+
+```bash
+py GoldEditor.py
+```
+
+### Option 2 — Windows Executable (`GoldEditor.exe`)
+
+Use this version if you prefer not to install Python.
+
+**How to run**
+1. Download `GoldEditor.exe` from the Releases section.
+2. Save it to a folder of your choice.
+3. Double-click `GoldEditor.exe`.
+4. If Windows displays a security warning, verify that you downloaded the file from this repository before deciding whether to run it.
+
+The executable is intended to run independently and does not require a separate Python installation.
+
+---
+
+## 🛠️ How to Use the Editor
+
+**1. Load your save**
+
+Paste your D2S1 save code into the text area, or use **Load File** to load a text-based save code from a file.
+
+**2. Change your gold**
+
+Enter the desired gold value and click **Apply Gold**.
+
+Gold is the only editable value in this tool.
+
+**3. Generate the modified save**
+
+Click **Generate Save Code** to create the modified D2S1 code.
+
+**4. Export the result**
+
+Use **Copy Output** to copy the code or **Save Output to File** to export it to a separate text file.
+
+**5. Back up your original save**
+
+Keep the original save untouched so you can restore it if necessary.
+
+---
+
+## ❌ What This Tool Does NOT Do
+
+This is not the full D2 Survivors Save Editor.
+
+It does not provide:
+
+- Item creation or editing.
+- Charm creation or editing.
+- Item copying.
+- Equipment or modifier editing.
+- SQLite-backed item databases.
+
+For the full Save Editor and its additional functionality, visit:
+
+👉 [github.com/justPLguy](https://github.com/justPLguy)
 
 ---
 
 ## ⚠️ Disclaimer
 
-D2 Survivor Tools is an independent, community-made project. It is not affiliated with, endorsed by, or supported by the developers or publishers of D2 Survivors.
+D2 Survivors Gold Editor is a community-made tool and is not affiliated with or endorsed by the game's developers.
 
-All tools are provided **"AS IS"**, without warranties of any kind. The maintainers are not responsible for leaderboard restrictions, rejected saves, corrupted files, lost progress, or other consequences resulting from the use of these tools.
+The software is provided **AS IS**, without warranties. Always use backups and understand the leaderboard consequences before modifying a save.
 
-Game behavior, save validation, and leaderboard eligibility may change with future updates. A tool that works with one game version may not work correctly with another.
-
-Use these tools at your own risk.
+**Modified saves are for experimentation only. Runs made with an edited save will not count toward leaderboard rankings.**
 
 ---
 
-## 📦 Releases & Updates
+**Created by Just a Polish Guy**
 
-Each tool has its own release history. Always read the relevant release notes before downloading or using a tool.
-
-- Use the version intended for your game version.
-- Keep backups of original saves.
-- Do not assume that a successful save edit means the game or leaderboard will accept the modified save.
-
----
-
-## 💜 Community & Contributions
-
-Suggestions, bug reports, and technical contributions are welcome.
-
-When reporting an issue, include the tool name, version, game version, and steps to reproduce the problem. **Never upload personal information or an unredacted save file unless you understand what it contains and intend to share it publicly.**
-
----
-
-**Made for experimentation. Use responsibly. Play at your own risk.**
+- [YouTube](https://www.youtube.com/@justPLguy)
+- [GitHub](https://github.com/justPLguy)
+- [Facebook](https://www.facebook.com/justPLguy/)
